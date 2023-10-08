@@ -6,7 +6,7 @@ $(function () {
 var plans = []
 
 $('.btn').click(function () {
-  console.log($(this).siblings('text').val());
+  console.log($(this).siblings('textarea').val());
   console.log($(this).parent().atttr('id'));
 });
 
