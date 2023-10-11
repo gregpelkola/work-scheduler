@@ -3,6 +3,7 @@
 // in the html.
 $(function () {
 
+  var currentDay = dayjs();
   var currentHour = dayjs().format('HH')
   console.log(currentHour);
   
