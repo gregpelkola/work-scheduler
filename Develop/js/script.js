@@ -14,7 +14,7 @@ $('.btn').click(function () {
 });
 
 var dateEl = $('#currentDay');
-var timeEl = 0
+var timeEl = 0;
 
 var userData = JSON.parse(localStorage.getItem("userData")) || [
   {id: "", text: ""},
