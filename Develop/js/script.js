@@ -16,6 +16,41 @@ $('.btn').click(function () {
 var dateEl = $('#currentDay');
 var timeEl = 0
 
+var userData = JSON.parse(localStorage.getItem("userData")) || [
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+  {id: "", text: ""},
+];
+
+$(".saveBtn").click(function(event){
+
+  selectedID = $(event.target).parents(".time-block").attr("id");
+  selectedText = $(event.target).parents("div").children(".description").val();
+  
+  userData[selectedID - 9].id = selectedID;
+  userData[selectedID - 9].text = selectedText;
+  localStorage.setItem("userData", JSON.stringify(userData));
+});
+
+function loadData(){
+
+  console.log(userData);
+
+  $(".time-block").each(function(){
+    var thisID = $(this).attr("id");
+    var thisText = $(this).children(".description").val();
+    console.log(thisID + "//" + thisText);
+
+    $(this).children(".description").val(userData[thisID - 9].text);
+  });
+};
+
 setInterval(function() {
   //timeEl++;
   dateEl.text(dayjs().format('dddd, MMM D'))
