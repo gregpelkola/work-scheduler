@@ -33,7 +33,8 @@ Provide instructions and examples for use. Include screenshots as needed.
 When opening the page the current date should display in the header, the user can then add events in the different time slots, and click the save button to save the event, so when the page is closed or refreshed it will keep the data saved to look back to in the future or to see past events.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
+![alt text](Develop/img/screenshot1.png)
+![alt text](Develop/img/screenshot2.png)
     ```md
     ![alt text](assets/images/screenshot.png)
     ```
