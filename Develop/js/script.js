@@ -1,13 +1,15 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-loadData()
+
 
 $(function () {
 
   var currentDay = dayjs()
   var currentHour = dayjs().format('HH')
+  console.log(currentDay);
   console.log(currentHour);
+  
   
 var plans = []
 
@@ -15,6 +17,8 @@ $('.btn').click(function () {
   console.log($(this).siblings('textarea').val());
   console.log($(this).parent().attr('id'));
 });
+
+loadData()
 
 var dateEl = $('#currentDay');
 var timeEl = 0;
@@ -36,8 +40,8 @@ $(".saveBtn").click(function(event){
   selectedID = $(event.target).parents(".time-block").attr("id");
   selectedText = $(event.target).parents("div").children(".description").val();
   
-  userData[selectedID - 9].id = selectedID;
-  userData[selectedID - 9].text = selectedText;
+  userData[selectedID - hour-9].id = selectedID;
+  userData[selectedID - hour-9].text = selectedText;
   localStorage.setItem("userData", JSON.stringify(userData));
 });
 
@@ -50,7 +54,7 @@ function loadData(){
     var thisText = $(this).children(".description").val();
     console.log(thisID + "//" + thisText);
 
-    $(this).children(".description").val(userData[thisID - 9].text);
+    $(this).children(".description").val(userData[thisID - hour-9].text);
   });
 };
 
