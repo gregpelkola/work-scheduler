@@ -5,7 +5,7 @@ loadData()
 
 $(function () {
 
-  var currentDay = dayjs().format('dddd, MM D ');
+  var currentDay = dayjs()
   var currentHour = dayjs().format('HH')
   console.log(currentHour);
   
